@@ -1,0 +1,63 @@
+@(schemas: List[String], XML: List[String])
+<html>
+<head>
+
+<title>
+</title>
+<script src="@routes.Assets.versioned("javascripts/jQuery.js")" type="text/javascript"></script>
+</head>
+<body>
+
+<p>Schemas</p>
+<p>
+Choose server IP:
+<select name="Server" onchange="serverIsSelected()" id="serverSelect">
+	<option>
+	<option>1.9.97.103
+	<option>1.9.97.114
+</select>
+</p>
+<p>
+Select schema name:
+@main("Schemas") {
+  <select name="Raw schema list" onchange="schemaIsSelected()" id="schemaSelect">
+  <option>
+  @for(schema <- schemas) {
+    <option>@schema
+  }
+  </select>
+}
+</p>
+
+<p>Schema XML</p>
+
+<textarea cols='200' rows='10' id="SchemaXML">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><Event><SystemID/><SessionID/><EventID/><StartTimeUTC/><EndTimeUTC/><Duration/><EventTypeID/><ChannelTypeID/><IsAnonymous/><Master_PTN/><Master_BAN/><IVR_App_Description/><IVR_App_Pattern_Ind/><IVR_Back_End_Data/><IVR_Call_Identifier/><IVR_Option_Timestamp/><IVR_RefData_App_Sequence_Number/><IVR_RefData_Application_Description/><IVR_RefData_Application_ID/><IVR_RefData_Back_End_Call_Sequence/><IVR_RefData_Back_End_Error_Number/><IVR_RefData_Back_End_Request_Number/><IVR_RefData_Back_End_Sequence_Number/><IVR_RefData_Back_End_Success_YN_Flag/><IVR_RefData_Brand/><IVR_RefData_Completion_YN_Flag/><IVR_RefData_Menu_Description/><IVR_RefData_Menu_ID/><IVR_RefData_Menu_Sequence_Number/><IVR_RefData_Option_Description/><IVR_RefData_Option_ID/><LayerID/><PhysicalID/><PhysicalCustomerID/><LogicalEvents/><OriginalEventID_String/><IVR_Menu_Description_String/><OriginalSessionID_String/></Event>
+</textarea>
+
+<script  type="text/javascript">
+function schemaIsSelected() {
+    var x = document.getElementById("schemaSelect");
+    var i = x.selectedIndex;
+    var s = document.getElementById("serverSelect");
+    var si = s.selectedIndex;
+	
+    document.getElementById("SchemaXML").innerHTML="XML schema for "+x.options[i].text +"  for server:"+s.options[si].text;;
+    $.get("http://localhost:9000/schemas/xmlRawSchema?rawschema=test"+x.options[i].text+"&server="+s.options[si].text						    
+		    , function(test, status){
+    		    alert("Data: " + test + "\nStatus: " + status);
+	});
+
+}
+function serverIsSelected() {
+    var x = document.getElementById("serverSelect");
+    var i = x.selectedIndex;
+    //$("SchemaXML").append("  for server:"+x.options[i].text);
+    var data=document.getElementById("SchemaXML").value;
+    document.getElementById("SchemaXML").innerHTML=data+"  for server:"+x.options[i].text;
+
+}
+</script>
+
+</body>
+</html>

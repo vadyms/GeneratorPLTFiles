@@ -1,0 +1,30 @@
+@(data: String)
+<html>
+<head>
+<title></title>
+<script src="@routes.Assets.versioned("javascripts/jQuery.js")" type="text/javascript"></script>
+
+    <script>
+    </script>
+<script type="text/javascript">
+ 
+$(document).ready(function(){
+ $("#msgid").html("This is Hello World by JQuery");
+
+ $("button").click(function(){
+	    $.get("http://localhost:9000/schemas/test", function(test, status){
+	        alert("Data: " + test + "\nStatus: " + status);
+	    });
+	});
+});
+
+</script>
+</head>
+<body>
+
+<p>Mapping</p>
+<button>Get Data Test</button>
+<div id="msgid">
+</div>
+</body>
+</html>
