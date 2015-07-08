@@ -1,6 +1,9 @@
 package controllers;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,18 +36,28 @@ public class Schemas extends Controller  {
     }
     
     public Result xmlRawSchema(String schemaName, String server) {
-    	File f = new File("C:/workspace/XMLFile/Event.xml");
-//        BufferedReader reader = new BufferedReader( new FileReader ("C:/workspace/XMLFile/Event.xml"));
-//        String         line = null;
-//        StringBuilder  stringBuilder = new StringBuilder();
-//        String         ls = System.getProperty("line.separator");
-//
-//        while( ( line = reader.readLine() ) != null ) {
-//            stringBuilder.append( line );
-//            stringBuilder.append( ls );
-//        }
-//        //return ok(f+"!"+schemaName+"-"+server+"!");
-    	return ok(f.toString());
+    	
+    	//File f = new File("C:/workspace/XMLFile/Event.xml");
+    	String s="";
+		try {
+			File file = new File("C:/workspace/XMLFile/Event.xml");
+			FileReader fileReader = new FileReader(file);
+			BufferedReader bufferedReader = new BufferedReader(fileReader);
+			StringBuffer stringBuffer = new StringBuffer();
+			String line;
+			while ((line = bufferedReader.readLine()) != null) {
+				stringBuffer.append(line);
+				stringBuffer.append("\n");
+			}
+			fileReader.close();
+			s=stringBuffer.toString();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+        //return ok(f+"!"+schemaName+"-"+server+"!");
+    	//return ok(f.toString());
+    	return ok(s);
+    	
     }
 
 }

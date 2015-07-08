@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>datamanagement</artifactId>
+        <groupId>com.ccih.datamanagement</groupId>
+        <version>6.5.2100.0000</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.ccih.datamanagement</groupId>
+    <artifactId>ccih-datamanagement-common</artifactId>
+	<version>6.5.2100.0000</version>
+    <packaging>jar</packaging>
+    <name>datamanagement.common</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.ccih.base.common</groupId>
+            <artifactId>ccih-base-common</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.google.protobuf</groupId>
+                    <artifactId>protobuf-java</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ccih.common.messaging</groupId>
+            <artifactId>ccih-common-messaging</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ccih.base.common</groupId>
+            <artifactId>ccih-base-common</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+
+    </dependencies>
+
+
+</project>

@@ -45,7 +45,8 @@ function schemaIsSelected() {
     document.getElementById("SchemaXML").innerHTML="XML schema for "+x.options[i].text +"  for server:"+s.options[si].text;;
     $.get("http://localhost:9000/schemas/xmlRawSchema?rawschema=test"+x.options[i].text+"&server="+s.options[si].text						    
 		    , function(test, status){
-    		    alert("Data: " + test + "\nStatus: " + status);
+    		    //alert("Data: " + test + "\nStatus: " + status);
+		    	document.getElementById("SchemaXML").innerHTML=test;
 	});
 
 }

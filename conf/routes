@@ -13,10 +13,13 @@ GET     /schemas/lsschemas					controllers.Schemas.lsSchemas()
 GET     /schemas/test						controllers.Schemas.test()
 GET     /schemas/xmlRawSchema				controllers.Schemas.xmlRawSchema(rawschema,server)
 
-
-
 GET     /data								controllers.Data.index()
 
 GET     /mapping							controllers.Mapping.index()
+
+GET     /generator							controllers.Generator.index()
+GET     /generator/xmlRawSchema				controllers.Generator.xmlRawSchema(rawschema,server)
+GET     /generator/lsschemas				controllers.Generator.lsSchemas()
+GET     /generator/test						controllers.Generator.test()
 
 #GET     /hotels/list        Hotels.list

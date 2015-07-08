@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>datamanagement</artifactId>
+        <groupId>com.ccih.datamanagement</groupId>
+        <version>6.5.2200-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <groupId>com.ccih.datamanagement</groupId>
+    <artifactId>ccih-datamanagement-schemamanagement</artifactId>
+    <packaging>jar</packaging>
+    <name>datamanagement.schemamanagement</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- PowerMock Dependencies -->
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-module-junit4</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-api-mockito</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ccih.datamanagement</groupId>
+            <artifactId>ccih-datamanagement-common</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ccih.common</groupId>
+            <artifactId>ccih-common-hbase</artifactId>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ccih.common</groupId>
+            <artifactId>ccih-common-util</artifactId>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ccih.base.common</groupId>
+            <artifactId>ccih-base-common</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.eaio.uuid</groupId>
+            <artifactId>uuid</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ccih.datamodel</groupId>
+            <artifactId>ccih-datamodel-common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ccih</groupId>
+            <artifactId>ccih-unified-data-model-codegen</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ccih</groupId>
+            <artifactId>unified-data-model</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+    </dependencies>
+
+</project>
