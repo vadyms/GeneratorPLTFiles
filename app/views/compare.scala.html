@@ -1,0 +1,171 @@
+@(compare: List[String], XML: List[String], data1: List[String], data2: List[String])
+<html>
+<head>
+
+<title>
+</title>
+<script src="@routes.Assets.versioned("javascripts/jQuery.js")" type="text/javascript"></script>
+
+        <!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+		
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<script  type="text/javascript">
+$(document).ready(function(){
+	 //$("#msgid").html("<b>This is Hello World by JQuery</b>");
+
+	 $("#compare").click(function(){
+
+		var data=document.getElementById("SchemaXML").value;
+    	var xml=document.getElementById("SchemaXML").value;
+
+    	var xmlDoc = $.parseXML( xml );
+    
+		var $xml = $(xmlDoc);
+		// Find Person Tag
+		var $member = $xml.find("member");
+
+		var table = document.createElement('table');
+	    var tr = document.createElement('tr');					
+	 	// create headers table
+		$member.each(function(){
+			var name = $(this).attr('name');
+			var isNullable = $(this).attr('nullable');
+            var td = document.createElement('th');
+            if (isNullable=="false") {
+            	var text = document.createTextNode(name+' !');
+            } else {
+            	var text = document.createTextNode(name);    
+            }
+            td.appendChild(text);
+            tr.appendChild(td);
+		});
+		table.appendChild(tr);
+
+		var data1=document.getElementById("data1").value;
+		
+		var lines = data1.split('\n');
+		var maxcol=0;
+		for(var i = 0;i<lines.length;i++){
+			var d1 = lines[i].split("|");
+			var tr = document.createElement('tr');
+			var maxcoltmp=0;
+		    for (var k=0;k<d1.length;k++) {
+                  var td = document.createElement('td');
+                  var text = document.createTextNode(d1[k]);
+                  td.appendChild(text);
+                  tr.appendChild(td);
+                  var maxcoltmp=maxcoltmp+1;
+		    }
+			if (maxcoltmp>maxcol) {
+				var maxcol=maxcoltmp;
+			}
+			table.appendChild(tr);
+		}
+		alert(maxcol);
+
+		var data2=document.getElementById("data2").value;
+		var d2 = data2.split("|");
+		var tr = document.createElement('tr');
+	    for (var i=0;i<d2.length;i++) {
+              var td = document.createElement('td');
+              var text = document.createTextNode(d2[i]);
+              td.appendChild(text);
+              tr.appendChild(td);
+	    }					
+		table.appendChild(tr);
+
+		var tr = document.createElement('tr');
+	    for (var i=1;i<=maxcol;i++) {
+              var td = document.createElement('td');
+              var text = document.createTextNode(i);
+              td.appendChild(text);
+              tr.appendChild(td);
+	    }					
+		table.appendChild(tr);
+		
+		document.body.appendChild(table);
+		});
+	});
+</script>
+</head>
+<style>
+table {
+    border-collapse: collapse;
+}
+
+table, td, th {
+    border: 1px solid black;
+     
+    white-space: nowrap;
+
+}
+</style>
+<body>
+@menu("Compare data") {
+}
+<p>Schemas</p>
+<p>
+Choose server IP:
+<select name="Server" onchange="serverIsSelected()" id="serverSelect">
+	<option>
+	<option>1.9.97.103
+	<option>1.9.97.114
+</select>
+</p>
+<p>
+Select schema name:
+  <select name="Raw schema list" onchange="schemaIsSelected()" id="schemaSelect">
+  <option>
+
+  </select>
+</p>
+<p>Schema XML</p>
+<textarea cols='200' rows='10' id="SchemaXML" wrap='off'>
+Schema
+</textarea>
+<button id="names">Add Names</button>
+<p>Data 1</p>
+<textarea cols='200' rows='2' id="data1" wrap='off'>
+666|92511631403174000|92511631403174102|2009-01-01 21:27:34.767|2009-01-01 21:27:34.767|3|14|14|0|15403592657|1886369806|179;BOOST SHORT CODES|54985||92511631403174|2009-01-01 21:27:37.680|1|179;BOOST SHORT CODES|179|1|N/A|N/A|N/A|N/A|BOOST MOBILE|NO|GREETING MENU|179000_179|2|TIMEOUT|T|3||||666_92511631403174102_14||666_92511631403174000_14
+</textarea>
+<p>Data 2</p>
+<textarea cols='200' rows='2' id="data2" wrap='off'>
+666|92511631407254000|92511631407254102|2009-01-05 21:33:31.053|2009-01-05 21:33:31.053|6|14|14|1|15023201527|1886369806|157;HANDSET|51422||92511631407254|2009-01-05 21:33:37.057|1|157;HANDSET|157|1|N/A|N/A|N/A|N/A|SPRINT-IVR|NO|GET ACCOUNT INFORMATION|157001_157|2|HANG-UP|H|3||||666_92511631407254102_14||666_92511631407254000_14
+</textarea>
+<button id="compare">Add Data</button>
+
+<div id="msgid">
+</div>
+
+<script  type="text/javascript">
+function schemaIsSelected() {
+    var x = document.getElementById("schemaSelect");
+    var i = x.selectedIndex;
+    var s = document.getElementById("serverSelect");
+    var si = s.selectedIndex;
+	
+    document.getElementById("SchemaXML").innerHTML="XML schema for "+x.options[i].text +"  for server:"+s.options[si].text;;
+    $.get("http://localhost:9000/Compare/xmlRawSchema?rawschema=test"+x.options[i].text+"&server="+s.options[si].text						    
+		    , function(test, status){
+    		    //alert("Data: " + test + "\nStatus: " + status);
+		    	document.getElementById("SchemaXML").innerHTML=test;
+	});
+
+}
+function serverIsSelected() {
+    var x = document.getElementById("serverSelect");
+    var i = x.selectedIndex;
+    //$("SchemaXML").append("  for server:"+x.options[i].text);
+    var data=document.getElementById("SchemaXML").value;
+    document.getElementById("SchemaXML").innerHTML=data+"  for server:"+x.options[i].text;
+}
+
+</script>
+</body>
+</html>

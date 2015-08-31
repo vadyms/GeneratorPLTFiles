@@ -8,6 +8,8 @@ GET     /                          			controllers.Application.index()
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               		controllers.Assets.versioned(path="/public", file: Asset)
 
+GET  	/javascripts/*file        			controllers.Assets.at(path="/public/javascripts", file)
+
 GET     /schemas							controllers.Schemas.index()
 GET     /schemas/lsschemas					controllers.Schemas.lsSchemas()
 GET     /schemas/test						controllers.Schemas.test()
@@ -17,9 +19,18 @@ GET     /data								controllers.Data.index()
 
 GET     /mapping							controllers.Mapping.index()
 
+GET     /compare							controllers.Compare.index()
+GET     /compare/compareData				controllers.Compare.compareData()
+POST    /compare/compareData				controllers.Compare.compareData()
+GET     /compare/xmlRawSchema				controllers.Compare.xmlRawSchema(rawschema,server)
+
+
+
 GET     /generator							controllers.Generator.index()
 GET     /generator/xmlRawSchema				controllers.Generator.xmlRawSchema(rawschema,server)
 GET     /generator/lsschemas				controllers.Generator.lsSchemas()
 GET     /generator/test						controllers.Generator.test()
+
+GET     /makeimport							controllers.MakeImport.index()
 
 #GET     /hotels/list        Hotels.list

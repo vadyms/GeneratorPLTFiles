@@ -7,7 +7,8 @@
 <script src="@routes.Assets.versioned("javascripts/jQuery.js")" type="text/javascript"></script>
 </head>
 <body>
-
+@main("PLT generator") {
+}
 <p>Schemas</p>
 <p>
 Choose server IP:
@@ -19,14 +20,12 @@ Choose server IP:
 </p>
 <p>
 Select schema name:
-@main("Schemas") {
   <select name="Raw schema list" onchange="schemaIsSelected()" id="schemaSelect">
   <option>
   @for(schema <- schemas) {
     <option>@schema
   }
   </select>
-}
 </p>
 
 <p>Schema XML</p>
@@ -48,8 +47,8 @@ function schemaIsSelected() {
     		    //alert("Data: " + test + "\nStatus: " + status);
 		    	document.getElementById("SchemaXML").innerHTML=test;
 	});
-
 }
+
 function serverIsSelected() {
     var x = document.getElementById("serverSelect");
     var i = x.selectedIndex;
@@ -58,6 +57,7 @@ function serverIsSelected() {
     document.getElementById("SchemaXML").innerHTML=data+"  for server:"+x.options[i].text;
 
 }
+
 </script>
 
 </body>

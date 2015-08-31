@@ -1,0 +1,348 @@
+@(makeimport: List[String], XML: List[String], data1: List[String], data2: List[String])
+<html>
+<head>
+
+<title>
+</title>
+<script src="@routes.Assets.versioned("javascripts/jQuery.js")" type="text/javascript"></script>
+
+        <!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+		
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		
+		<!-- 
+		<script src="@routes.Assets.at("hello.js")" type="text/javascript"></script>
+ 		-->
+ 		
+	    <link rel="stylesheet" href="@routes.Assets.at("jqwidgets/jqwidgets/styles/jqx.base.css")" type="text/css" />
+		<script src="@routes.Assets.at("jqwidgets/scripts/jquery-1.11.1.min.js")" type="text/javascript"></script>
+	    <script src="@routes.Assets.at("jqwidgets/jqwidgets/jqxcore.js")" type="text/javascript"></script>
+	    <script src="@routes.Assets.at("jqwidgets/jqwidgets/jqxdata.js")" type="text/javascript"></script> 
+	    <script src="@routes.Assets.at("jqwidgets/jqwidgets/jqxbuttons.js")" type="text/javascript"></script>
+	    <script src="@routes.Assets.at("jqwidgets/jqwidgets/jqxscrollbar.js")" type="text/javascript"></script>
+	    <script src="@routes.Assets.at("jqwidgets/jqwidgets/jqxmenu.js")" type="text/javascript"></script>
+	    <script src="@routes.Assets.at("jqwidgets/jqwidgets/jqxgrid.js")" type="text/javascript"></script>
+	    <script src="@routes.Assets.at("jqwidgets/jqwidgets/jqxgrid.edit.js")" type="text/javascript"></script>  
+	    <script src="@routes.Assets.at("jqwidgets/jqwidgets/jqxgrid.selection.js")" type="text/javascript"></script> 
+	    <script src="@routes.Assets.at("jqwidgets/jqwidgets/jqxlistbox.js")" type="text/javascript"></script>
+	    <script src="@routes.Assets.at("jqwidgets/jqwidgets/jqxdropdownlist.js")" type="text/javascript"></script>
+	    <script src="@routes.Assets.at("jqwidgets/jqwidgets/jqxcheckbox.js")" type="text/javascript"></script>
+	    <script src="@routes.Assets.at("jqwidgets/jqwidgets/jqxcalendar.js")" type="text/javascript"></script>
+	    <script src="@routes.Assets.at("jqwidgets/jqwidgets/jqxnumberinput.js")" type="text/javascript"></script>
+	    <script src="@routes.Assets.at("jqwidgets/jqwidgets/jqxdatetimeinput.js")" type="text/javascript"></script>
+	    <script src="@routes.Assets.at("jqwidgets/jqwidgets/globalization/globalize.js")" type="text/javascript"></script>
+	    <script src="@routes.Assets.at("jqwidgets/scripts/demos.js")" type="text/javascript"></script>
+	    <script src="@routes.Assets.at("jqwidgets/demos/sampledata/generatedata.js")" type="text/javascript"></script>
+
+<script  type="text/javascript">
+$(document).ready(function(){
+	//$("#msgid").html("<b>This is Hello World by JQuery</b>");
+	 
+	// *****************************************
+	// initialize grid
+    var columns= [];
+	var localdata=[];
+	var schemanames=[];
+	var clmns= [];
+	
+    var source ={
+    	datafields: columns,
+    	localdata: localdata,
+    	datatype: "array"
+    };
+
+    var dataAdapter = new $.jqx.dataAdapter(source);
+    
+    $("#jqxgrid").jqxGrid(
+    {
+        source: dataAdapter,
+    	width: "100%",
+        height: 200
+    });
+
+    // events
+    $("#jqxgrid").on('cellbeginedit', function (event) {
+    	//var args = event.args;
+        //$("#cellbegineditevent").text("Event Type: cellbeginedit, Column: " + args.datafield + ", Row: " + (1 + args.rowindex) + ", Value: " + args.value);
+    });
+    $("#jqxgrid").on('cellvaluechanged', function (event) {
+    	//var args = event.args;
+        //$("#cellendeditevent").text("Event Type: cellendedit, Column: " + args.datafield + ", Row: " + (1 + args.rowindex) + ", Value: " + args.value);
+    	makeData();	 
+    });
+            
+    // ***************************************** 
+	
+	function makeData() {
+		//var rows = $('#jqxgrid').jqxGrid('getrows');
+		//alert(schemanames.length);
+		var rows = $('#jqxgrid').jqxGrid('getdisplayrows');
+		//alert($('#jqxgrid').jqxGrid('columns').records.length);
+		
+	 	var txt="";
+	 	for (var i=0;i<rows.length;i++) {
+	 		var k=0;
+	 		var temp="";
+
+	 		for (var n=0;n<schemanames.length;n++) {
+		 		//alert(schemanames[n]);
+	 			if (rows[i][schemanames[n]]!=null) {
+					temp=temp+rows[i][schemanames[n]];
+	 			}
+				else {
+					temp=temp+"";
+	 			}
+				if (n<schemanames.length-1) {
+					temp=temp+"|";
+				}
+	 		}
+		 	//for (var prop in rows[i]) {
+			// 	alert(k+" - "+prop + " - " + rows[i][prop]);
+			// 	alert("!!-"+rows[i]['IVR_Menu_Description_String']);
+			// 	alert("!!-"+rows[i]['SystemID']);
+			// 	
+			// 	if (prop!='uid') {
+			// 		temp=temp+rows[i][prop]; 	
+			// 	}
+			// 	if (rows[i][prop].length>0) {
+			// 		//temp=temp+rows[i][prop]+"|";
+			// 	} else {
+			// 		//temp=temp+"|";
+			// 	}
+			// 	if (k<schemanames.length-1) {
+			// 		temp=temp+"|";
+			// 	}
+			// 	k++;
+		 	//}
+		 	temp=temp+"\n";
+		 	txt=txt+temp;
+	 	}
+	 	//alert(txt);
+	 	//alert(schemanames);
+	 	$("#generatedData").val(txt);
+    } 
+	$("#names").click(function(){
+	 	makeData();
+	 });
+	 
+	 $("#compare").click(function(){
+		$("#jqxgrid").jqxGrid('clear');
+		
+		localdata=[];
+	    columns= [];
+		localdata=[];
+		schemanames=[];
+		clmns= [];
+		
+		var data=document.getElementById("SchemaXML").value;
+		var rows=data.split('\n');
+		var xmltmp="";
+		for (var i = 0; i < rows.length;i++) {
+			if (rows[i]!="") {
+				xmltmp=xmltmp+rows[i];
+			}
+		}
+		var xml=xmltmp;
+    	//var xml=document.getElementById("SchemaXML").value; //works but not with first empty lines
+    	
+    	var xmlDoc = $.parseXML( xml );
+		var $xml = $(xmlDoc);
+		var $member = $xml.find("member");
+
+		var table = document.createElement('table');
+	    var tr = document.createElement('tr');					
+	 	// create headers table
+		$member.each(function(){
+			var name = $(this).attr('name');
+			var isNullable = $(this).attr('nullable');
+            var td = document.createElement('th');
+            if (isNullable=="false") {
+            	var text = document.createTextNode(name+' !');
+            } else {
+            	var text = document.createTextNode(name);    
+            }
+            schemanames.push(name);
+            td.appendChild(text);
+            tr.appendChild(td);
+		});
+		table.appendChild(tr);
+
+		var data1=document.getElementById("data1").value;
+		
+		var lines = data1.split('\n');
+
+		for(var i = 0;i < lines.length;i++){
+			var d1 = lines[i].split("|");
+			var tr = document.createElement('tr');
+		    for (var k=0;k<d1.length;k++) {
+                  var td = document.createElement('td');
+                  var text = document.createTextNode(d1[k]);
+                  td.appendChild(text);
+                  tr.appendChild(td);
+		    }					
+			table.appendChild(tr);
+		}
+
+
+		//********************************************************* 		
+		// create headers table
+		//var columns= [];
+		//var clmns= [];
+		var iMem=0;
+		$member.each(function(){
+			var name = $(this).attr('name');
+		 	var isNullable = $(this).attr('nullable');
+		          
+		    if (isNullable=="false") {
+		    	columns.push({ name: name, type: 'string', map: iMem.toString() });
+		    	//clmns.push({ text: name, datafield: name, width: 150 });
+		    	clmns.push({ text: iMem+"!"+"-"+name, datafield: name, width: 200 });
+		        //var text = document.createTextNode(name+' !');
+		    } else {
+		    	columns.push({ name: name, type: 'string', map: iMem.toString() });
+		    	//clmns.push({ text: name, datafield: name, width: 150 });
+		    	clmns.push({ text: iMem+"!"+"-"+name, datafield: name, width: 200 });
+		        //var text = document.createTextNode(name);    
+		    }
+		    iMem++;
+		});
+		var iCol=0;
+		var iColMax=0;		
+		for(var i = 0;i < lines.length;i++){
+			var tmp=[];
+			if (lines[i]!="") {
+				var d1 = lines[i].split("|");
+			    for (var k=0;k<d1.length;k++) {
+				    if (d1[k].length>0) {
+	                	tmp.push(d1[k]);
+				    } else {
+				    	//tmp.push(d1[k]);
+				    	tmp.push('');
+				    }
+				    iCol++;
+			    }
+			    localdata.push(tmp);
+			}
+			if (iColMax<iCol) {
+				iColMax=iCol;
+				iCol=0;
+			} else {
+				iCol=0;
+			}
+		}
+		if (iColMax!=iMem) {
+			alert("Warning: Schema has "+iMem+" members, but data max is "+iColMax);
+		}
+        source.datafields = columns;
+        source.localdata = localdata;
+        $("#jqxgrid").jqxGrid(
+        {
+            columns: clmns,
+            editable: true,
+            selectionmode: 'multiplecellsadvanced',
+            columnsresize: true
+        });
+        //
+        
+        $("#jqxgrid").jqxGrid('updatebounddata', 'cells');
+        $('#jqxgrid').jqxGrid('autoresizecolumns');
+        makeData();
+
+		});
+	});
+</script>
+</head>
+<style>
+table {
+    border-collapse: collapse;
+}
+
+table, td, th {
+    border: 1px solid black;
+     
+    white-space: nowrap;
+
+}
+</style>
+<body>
+@menu("Compare data") {
+}
+<h3>Make data</h3>
+<div style="display:none">
+Choose server IP:
+<select name="Server" onchange="serverIsSelected()" id="serverSelect">
+	<option>
+	<option>1.9.97.103
+	<option>1.9.97.114
+</select>
+</div>
+<div style="display:none">
+Select schema name:
+  <select name="Raw schema list" onchange="schemaIsSelected()" id="schemaSelect">
+  <option>
+
+  </select>
+</div>
+<h4>Schema XML</h4>
+<textarea cols='200' rows='10' id="SchemaXML" wrap='off'>
+
+</textarea>
+<!-- 
+Schema
+ -->
+<h4>Data for Schema XML</h4>
+<textarea cols='200' rows='4' id="data1" wrap='off'>
+
+</textarea>
+<!-- 
+666|92511631403174000|92511631403174102|2009-01-01 21:27:34.767|2009-01-01 21:27:34.767|3|14|14|0|15403592657|1886369806|179;BOOST SHORT CODES|54985||92511631403174|2009-01-01 21:27:37.680|1|179;BOOST SHORT CODES|179|1|N/A|N/A|N/A|N/A|BOOST MOBILE|NO|GREETING MENU|179000_179|2|TIMEOUT|T|3||||666_92511631403174102_14||666_92511631403174000_14
+ -->
+
+<button id="compare">Generate table</button>
+
+<h4>Generated table for edit</h4> 
+<div id="msgid">
+</div>
+    <div id='jqxWidget'>
+        <div id="jqxgrid"></div>
+        <div style="font-size: 12px; font-family: Verdana, Geneva, 'DejaVu Sans', sans-serif; margin-top: 30px;">
+            <div id="cellbegineditevent"></div>
+            <div style="margin-top: 10px;" id="cellendeditevent"></div>
+       </div>
+    </div>
+<button id="names">Generate input data</button>
+<h4>Generated data</h4>
+<textarea cols='200' rows='5' id="generatedData" wrap='off'>
+
+</textarea>
+
+<script  type="text/javascript">
+function schemaIsSelected() {
+    var x = document.getElementById("schemaSelect");
+    var i = x.selectedIndex;
+    var s = document.getElementById("serverSelect");
+    var si = s.selectedIndex;
+	
+    document.getElementById("SchemaXML").innerHTML="XML schema for "+x.options[i].text +"  for server:"+s.options[si].text;;
+    $.get("http://localhost:9000/Compare/xmlRawSchema?rawschema=test"+x.options[i].text+"&server="+s.options[si].text						    
+		    , function(test, status){
+    		    //alert("Data: " + test + "\nStatus: " + status);
+		    	document.getElementById("SchemaXML").innerHTML=test;
+	});
+
+}
+function serverIsSelected() {
+    var x = document.getElementById("serverSelect");
+    var i = x.selectedIndex;
+    //$("SchemaXML").append("  for server:"+x.options[i].text);
+    var data=document.getElementById("SchemaXML").value;
+    document.getElementById("SchemaXML").innerHTML=data+"  for server:"+x.options[i].text;
+}
+</script>
+</body>
+</html>

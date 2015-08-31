@@ -15,8 +15,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body>
-
-
+@main("PLT generator") {
+}
 <p>Generator</p>
 <p>
 Choose server IP:
@@ -28,14 +28,13 @@ Choose server IP:
 </p>
 <p>
 Select schema name:
-@main("PLT generator") {
+
   <select name="Raw schema list" onchange="schemaIsSelected()" id="schemaSelect">
   <option>
   @for(g <- generator) {
     <option>@g
   }
   </select>
-}
 </p>
 
 <p>Schema XML</p>
@@ -54,7 +53,7 @@ function schemaIsSelected() {
     document.getElementById("SchemaXML").innerHTML="XML schema for "+x.options[i].text +"  for server:"+s.options[si].text;;
     $.get("http://localhost:9000/generator/xmlRawSchema?rawschema=test"+x.options[i].text+"&server="+s.options[si].text						    
 		    , function(test, status){
-    		    //alert("Data: " + test + "\nStatus: " + status);
+    		    alert("Data: " + test + "\nStatus: " + status);
 		    	document.getElementById("SchemaXML").innerHTML=test;
 	});
 
