@@ -39,11 +39,10 @@ public class MakeImport extends Controller  {
  	   	//get current date time with Calendar()
  	   	Calendar cal = Calendar.getInstance();
  	   	
-    	if (sDate!=dateFormat.format(date)) {
+    	if (sDate.equals(dateFormat.format(date))) {
+    	} else {
     		sDate = dateFormat.format(date);
     		count=1;
-    	} else {
-
     	}
  	   	
     	List<String> lines = new ArrayList<String>();
