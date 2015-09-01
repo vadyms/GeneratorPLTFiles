@@ -41,6 +41,7 @@ public class MakeImport extends Controller  {
  	   	
     	if (sDate!=dateFormat.format(date)) {
     		sDate = dateFormat.format(date);
+    		count=1;
     	} else {
 
     	}

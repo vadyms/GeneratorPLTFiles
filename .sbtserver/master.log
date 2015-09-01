@@ -9976,4 +9976,267 @@ Initial source changes:
 Removed products: Set(C:\play\APP1\target\scala-2.11\classes\lib\action.class)
 External API changes: API Changes: Set()
 Modified binary dependencies: Set()
-Initial directly invalidated sources: Set(C:\play\APP1\app\controllers\Mak
+Initial directly invalidated sources: Set(C:\play\APP1\app\controllers\MakeImport.java)
+
+Sources indirectly invalidated by:
+	product: Set(C:\play\APP1\app\lib\action.java)
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\play\APP1\app\controllers\MakeImport.java, C:\play\APP1\app\lib\action.java)
+
+Read from stdout: Compiling 2 Java sources to C:\play\APP1\target\scala-2.11\classes...
+Compiling 2 Java sources to C:\play\APP1\target\scala-2.11\classes...
+Read from stdout: C:\play\APP1\app\controllers\MakeImport.java:70:  error: cannot find symbol
+C:\play\APP1\app\controllers\MakeImport.java:70:  error: cannot find symbol
+Read from stdout: 			FileWriter writer = new FileWriter(sStatFile); 
+Read from stdout: 			^
+			FileWriter writer = new FileWriter(sStatFile); 
+			^
+Read from stdout: (compile:compileIncremental) javac returned nonzero exit code
+(compile:compileIncremental) javac returned nonzero exit code
+Total time: 4 s, completed Aug 31, 2015 5:54:30 PM
+> server-post-command-error-handler
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@171f881, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\play\APP1\app\controllers\MakeImport.java)
+Removed products: Set(C:\play\APP1\target\scala-2.11\classes\lib\action.class)
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\play\APP1\app\controllers\MakeImport.java)
+
+Sources indirectly invalidated by:
+	product: Set(C:\play\APP1\app\lib\action.java)
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\play\APP1\app\controllers\MakeImport.java, C:\play\APP1\app\lib\action.java)
+
+Read from stdout: Compiling 2 Java sources to C:\play\APP1\target\scala-2.11\classes...
+Compiling 2 Java sources to C:\play\APP1\target\scala-2.11\classes...
+Read from stdout: C:\play\APP1\app\controllers\MakeImport.java:70:  error: cannot find symbol
+C:\play\APP1\app\controllers\MakeImport.java:70:  error: cannot find symbol
+Read from stdout: 			FileWriter writer = new FileWriter(sStatFile); 
+Read from stdout: 			^
+			FileWriter writer = new FileWriter(sStatFile); 
+			^
+Read from stdout: (compile:compileIncremental) javac returned nonzero exit code
+(compile:compileIncremental) javac returned nonzero exit code
+Total time: 2 s, completed Aug 31, 2015 5:54:34 PM
+> server-post-command-error-handler
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/play/APP1/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@16e839c, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\play\APP1\app\controllers\MakeImport.java)
+Removed products: Set(C:\play\APP1\target\scala-2.11\classes\lib\action.class)
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\play\APP1\app\controllers\MakeImport.java)
+
+Sources indirectly invalidated by:
+	product: Set(C:\play\APP1\app\lib\action.java)
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\play\APP1\app\controllers\MakeImport.java, C:\play\APP1\app\lib\action.java)
+
+Read from stdout: Compiling 2 Java sources to C:\play\APP1\target\scala-2.11\classes...
+Compiling 2 Java sources to C:\play\APP1\target\scala-2.11\classes...
+Read from stdout: C:\play\APP1\app\controllers\MakeImport.java:70:  error: cannot find symbol
+C:\play\APP1\app\controllers\MakeImport.java:70:  error: cannot find symbol
+Read from stdout: 			FileWriter writer = new FileWriter(sStatFile); 
+Read from stdout: 			^
+			FileWriter writer = new FileWriter(sStatFile); 
+			^
+Total time: 4 s, completed Aug 31, 2015 5:55:11 PM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/play/APP1/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@1aa6927, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\play\APP1\app\controllers\MakeImport.java)
+Removed products: Set(C:\play\APP1\target\scala-2.11\classes\lib\action.class)
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\play\APP1\app\controllers\MakeImport.java)
+
+Sources indirectly invalidated by:
+	product: Set(C:\play\APP1\app\lib\action.java)
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\play\APP1\app\controllers\MakeImport.java, C:\play\APP1\app\lib\action.java)
+
+Read from stdout: Compiling 2 Java sources to C:\play\APP1\target\scala-2.11\classes...
+Compiling 2 Java sources to C:\play\APP1\target\scala-2.11\classes...
+Read from stdout: C:\play\APP1\app\controllers\MakeImport.java:70:  error: cannot find symbol
+C:\play\APP1\app\controllers\MakeImport.java:70:  error: cannot find symbol
+Read from stdout: 			FileWriter writer = new FileWriter(sStatFile); 
+Read from stdout: 			^
+			FileWriter writer = new FileWriter(sStatFile); 
+			^
+Total time: 4 s, completed Aug 31, 2015 5:55:21 PM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@4704e6, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\play\APP1\app\controllers\MakeImport.java)
+Removed products: Set(C:\play\APP1\target\scala-2.11\classes\lib\action.class)
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\play\APP1\app\controllers\MakeImport.java)
+
+Sources indirectly invalidated by:
+	product: Set(C:\play\APP1\app\lib\action.java)
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\play\APP1\app\controllers\MakeImport.java, C:\play\APP1\app\lib\action.java)
+
+Read from stdout: Compiling 2 Java sources to C:\play\APP1\target\scala-2.11\classes...
+Compiling 2 Java sources to C:\play\APP1\target\scala-2.11\classes...
+Read from stdout: C:\play\APP1\app\controllers\MakeImport.java:70:  error: cannot find symbol
+C:\play\APP1\app\controllers\MakeImport.java:70:  error: cannot find symbol
+Read from stdout: 			FileWriter writer = new FileWriter(sStatFile); 
+Read from stdout: 			^
+			FileWriter writer = new FileWriter(sStatFile); 
+			^
+Read from stdout: (compile:compileIncremental) javac returned nonzero exit code
+(compile:compileIncremental) javac returned nonzero exit code
+Total time: 1 s, completed Aug 31, 2015 5:55:47 PM
+> server-post-command-error-handler
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@1845b56, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\play\APP1\app\controllers\MakeImport.java)
+Removed products: Set(C:\play\APP1\target\scala-2.11\classes\lib\action.class)
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\play\APP1\app\controllers\MakeImport.java)
+
+Sources indirectly invalidated by:
+	product: Set(C:\play\APP1\app\lib\action.java)
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\play\APP1\app\controllers\MakeImport.java, C:\play\APP1\app\lib\action.java)
+
+Read from stdout: Compiling 2 Java sources to C:\play\APP1\target\scala-2.11\classes...
+Compiling 2 Java sources to C:\play\APP1\target\scala-2.11\classes...
+Java compilation took 1.020577496 s
+Java analysis took 0.051308464 s
+Java compile + analysis took 1.087336555 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 2 s, completed Aug 31, 2015 5:55:53 PM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/play/APP1/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@cdfb8b, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Copy resource mappings: 
+	(C:\play\APP1\conf\application.conf,C:\play\APP1\target\scala-2.11\classes\application.conf)
+	(C:\play\APP1\conf\logback.xml,C:\play\APP1\target\scala-2.11\classes\logback.xml)
+	(C:\play\APP1\conf\routes,C:\play\APP1\target\scala-2.11\classes\routes)
+Total time: 4 s, completed Aug 31, 2015 5:56:06 PM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@4c1a8b, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\play\APP1\app\controllers\MakeImport.java)
+Removed products: Set(C:\play\APP1\target\scala-2.11\classes\lib\action.class)
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\play\APP1\app\controllers\MakeImport.java)
+
+Sources indirectly invalidated by:
+	product: Set(C:\play\APP1\app\lib\action.java)
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\play\APP1\app\controllers\MakeImport.java, C:\play\APP1\app\lib\action.java)
+
+Read from stdout: Compiling 2 Java sources to C:\play\APP1\target\scala-2.11\classes...
+Compiling 2 Java sources to C:\play\APP1\target\scala-2.11\classes...
+Java compilation took 22.740786223 s
+Java analysis took 6.901127092 s
+Java compile + analysis took 29.713250943 s
+Invalidating C:\play\APP1\app\controllers\MakeImport.java...
+Invalidating (transitively) by inheritance from C:\play\APP1\app\controllers\MakeImport.java...
+Initial set of included nodes: Set(C:\play\APP1\app\controllers\MakeImport.java)
+Invalidated by transitive inheritance dependency: Set(C:\play\APP1\app\controllers\MakeImport.java)
+The C:\play\APP1\app\controllers\MakeImport.java source file has the following regular definitions changed:
+	enumerator, xmlRawSchema, notify, FROM, movedPermanently, CONTENT_LANGUAGE, CREATED, temporaryRedirect, sDate, test, Results$StringChunks$WhenReadyStringChunks, WARNING, CONTINUE, SET_COOKIE2, count, CONTENT_DISPOSITION, wrappedStatus, channel, CONTENT_TYPE, Results$Redirect, badRequest, statistic, wait, ACCESS_CONTROL_ALLOW_METHODS, USER_AGENT, ctx, HOST, CONTENT_MD5, request, X_FORWARDED_PORT, paymentRequired, BAD_REQUEST, logger, MAX_FORWARDS, X_FORWARDED_HOST, redirect, TRAILER, PROXY_AUTHENTICATE, AUTHORIZATION, CACHE_CONTROL, lsSchemas, NOT_IMPLEMENTED, equals, PAYMENT_REQUIRED, RETRY_AFTER, PRECONDITION_FAILED, CONFLICT, ACCEPT_CHARSET, Results$ByteChunks$WhenReadyByteChunks, onReady, VIA, REQUEST_TIMEOUT, MULTIPLE_CHOICES, sStatFile, redirectLocation, notFound, MOVED_PERMANENTLY, TE, CONTENT_LOCATION, PARTIAL_CONTENT, ETAG, LENGTH_REQUIRED, UNAUTHORIZED, UNSUPPORTED_MEDIA_TYPE, REFERER, REQUEST_ENTITY_TOO_LARGE, ORIGIN, ACCEPT_LANGUAGE, NOT_MODIFIED, as, Results$StringChunks, Results$Todo, HTTP_VERSION_NOT_SUPPORTED, ACCESS_CONTROL_ALLOW_ORIGIN, Results$Status, IF_RANGE, IF_UNMODIFIED_SINCE, toScala, SWITCHING_PROTOCOLS, callback, TEMPORARY_REDIRECT, CONTENT_LENGTH, SET_COOKIE, notifyAll, AGE, BAD_GATEWAY, EXPECTATION_FAILED, CONNECTION, FORWARDED, Results$ByteChunks, Results$Chunks$Out, OK, cookies, ACCESS_CONTROL_ALLOW_HEADERS, found, unauthorized, response, FOUND, <init>, DATE, CONTENT_RANGE, sendResource, TRANSFER_ENCODING, contentType, compareData, sVisitorList, PROXY_AUTHORIZATION, GONE, ACCESS_CONTROL_ALLOW_CREDENTIALS, clearLang, cookie, NOT_ACCEPTABLE, MakeImport, charset, status, EXPECT, LOCATION, VARY, WWW_AUTHENTICATE, TODO, forbidden, X_FORWARDED_FOR, access$000, ACCEPTED, NO_CONTENT, disconnected, INTERNAL_SERVER_ERROR, onDisconnected, lambda$new$1, UPGRADE, NOT_FOUND, session, ACCEPT_ENCODING, EXPIRES, seeOther, REQUESTED_RANGE_NOT_SATISFIABLE, header, toString, wrappedResult, lambda$onDisconnected$2, ACCEPT, changeLang, GATEWAY_TIMEOUT, whenReady, SERVER, ACCESS_CONTROL_REQUEST_METHOD, ACCESS_CONTROL_MAX_AGE, sendPath, LAST_MODIFIED, ACCESS_CONTROL_EXPOSE_HEADERS, ACCESS_CONTROL_REQUEST_HEADERS, flash, internalServerError, ok, ALLOW, COOKIE, IF_MODIFIED_SINCE, getClass, CONTENT_TRANSFER_ENCODING, lang, headers, Results$StatusHeader, NON_AUTHORITATIVE_INFORMATION, sPage, close, PRAGMA, IF_MATCH, PROXY_AUTHENTICATION_REQUIRED, RESET_CONTENT, SEE_OTHER, CONTENT_ENCODING, RANGE, USE_PROXY, Results$Chunks, REQUEST_URI_TOO_LONG, writable, FORBIDDEN, METHOD_NOT_ALLOWED, write, IF_NONE_MATCH, visitors, ACCEPT_RANGES, noContent, X_REQUESTED_WITH, X_FORWARDED_PROTO, schemas, SERVICE_UNAVAILABLE, index, created, hashCode.
+All member reference dependencies will be considered within this context.
+Name hashing optimization doesn't apply to non-Scala dependency: C:\play\APP1\app\controllers\MakeImport.java
+The following modified names cause invalidation of C:\play\APP1\target\scala-2.11\routes\main\router\Routes.scala: Set(xmlRawSchema, test, lsSchemas, <init>, compareData, MakeImport, getClass, index)
+New invalidations:
+	Set(C:\play\APP1\target\scala-2.11\routes\main\router\Routes.scala)
+Initial set of included nodes: Set(C:\play\APP1\target\scala-2.11\routes\main\router\Routes.scala)
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set(C:\play\APP1\target\scala-2.11\routes\main\router\Routes.scala)
+Read from stdout: Compiling 1 Scala source to C:\play\APP1\target\scala-2.11\classes...
+Compiling 1 Scala source to C:\play\APP1\target\scala-2.11\classes...
+Getting compiler-interface from component compiler for Scala 2.11.6
+Other repositories:
+Default repositories:
+Getting compiler-interface from component compiler for Scala 2.11.6
+Other repositories:
+Default repositories:
+Running cached compiler 2776a4, interfacing (CompilerInterface) with Scala compiler version 2.11.6
+Calling Scala compiler with arguments  (CompilerInterface):
+	-deprecation
+	-unchecked
+	-encoding
+	utf8
+	-bootclasspath
+	C:\Program Files\Java\jre1.8.0_60\lib\resources.jar;C:\Program Files\Java\jre1.8.0_60\lib\rt.jar;C:\Program Files\Java\jre1.8.0_60\lib\sunrsasign.jar;C:\Program Files\Java\jre1.8.0_60\lib\jsse.jar;C:\Program Files\Java\jre1.8.0_60\lib\jce.jar;C:\Program Files\Java\jre1.8.0_60\lib\charsets.jar;C:\Program Files\Java\jre1.8.0_60\lib\jfr.jar;C:\Program Files\Java\jre1.8.0_60\classes;C:\Users\admin\.ivy2\cache\org.scala-lang\scala-library\jars\scala-library-2.11.6.jar
+	-classpath
+	C:\play\APP1\target\scala-2.11\classes;C:\Users\admin\.ivy2\cache\com.typesafe.play\twirl-api_2.11\jars\twirl-api_2.11-1.1.1.jar;C:\Users\admin\.ivy2\cache\org.apache.commons\commons-lang3\jars\commons-lang3-3.4.jar;C:\Users\admin\.ivy2\cache\org.scala-lang.modules\scala-xml_2.11\bundles\scala-xml_2.11-1.0.1.jar;C:\Users\admin\.ivy2\cache\com.typesafe.play\play-enhancer\jars\play-enhancer-1.1.0.jar;C:\Users\admin\.ivy2\cache\com.typesafe.play\play-server_2.11\jars\play-server_2.11-2.4.1.jar;C:\Users\admin\.ivy2\cache\com.typesafe.play\play_2.11\jars\play_2.11-2.4.1.jar;C:\Users\admin\.ivy2\cache\com.typesafe.play\build-link\jars\build-link-2.4.1.jar;C:\Users\admin\.ivy2\cache\com.typesafe.play\play-exceptions\jars\play-exceptions-2.4.1.jar;C:\Users\admin\.ivy2\cache\org.javassist\javassist\bundles\javassist-3.19.0-GA.jar;C:\Users\admin\.ivy2\cache\com.typesafe.play\play-iteratees_2.11\jars\play-iteratees_2.11-2.4.1.jar;C:\Users\admin\.ivy2\cache\org.scala-stm\scala-stm_2.11\jars\scala-stm_2.11-0.7.jar;C:\Users\admin\.ivy2\cache\com.typesafe\config\bundles\config-1.3.0.jar;C:\Users\admin\.ivy2\cache\com.typesafe.play\play-json_2.11\jars\play-json_2.11-2.4.1.jar;C:\Users\admin\.ivy2\cache\com.typesafe.play\play-functional_2.11\jars\play-functional_2.11-2.4.1.jar;C:\Users\admin\.ivy2\c
