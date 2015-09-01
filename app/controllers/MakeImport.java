@@ -86,9 +86,9 @@ public class MakeImport extends Controller  {
  	   	Date date = new Date();
  	   	//get current date time with Calendar()
  	   	Calendar cal = Calendar.getInstance();
- 	   	String sDate = dateFormat.format(date);
+ 	   	String sDateTime = dateFormat.format(date);
  	   	
-		visitors.add(sDate+ " - "+remote+"\n");
+		visitors.add(sDateTime+ " - "+remote+"\n");
 		
     	try {
 			FileWriter writer = new FileWriter(sVisitorList); 
