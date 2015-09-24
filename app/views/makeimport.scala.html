@@ -244,7 +244,6 @@ $(document).ready(function(){
 		}
         source.datafields = columns;
         source.localdata = localdata;
-
         $("#jqxgrid").jqxGrid(
         {
             columns: clmns,
@@ -253,8 +252,6 @@ $(document).ready(function(){
             columnsresize: true//,
             //theme: 'orange' 
         });
-        //
-        
         $("#jqxgrid").jqxGrid('updatebounddata', 'cells');
         //$('#jqxgrid').jqxGrid('autoresizecolumns');
         makeData();
@@ -272,14 +269,17 @@ table, td, th {
     border: 1px solid black;
      
     white-space: nowrap;
-
 }
 </style>
 <body>
-
 @menu("Compare data") {
 }
-<h3>Make data</h3>
+
+<div align="center">
+	<h3>Compare, Edit, Make plt data files</h3>
+</div>
+<hr>
+
 <div style="display:none">
 Choose server IP:
 <select name="Server" onchange="serverIsSelected()" id="serverSelect">
@@ -295,23 +295,30 @@ Select schema name:
 
   </select>
 </div>
+
+<div align="center">
 <h4>Schema XML</h4>
 <textarea cols='200' rows='10' id="SchemaXML" wrap='off'>
 
 </textarea>
+</div>
 <!-- 
 Schema
  -->
+<div align="center">
 <h4>Data for Schema XML</h4>
 <textarea cols='200' rows='4' id="data1" wrap='off'>
-
 </textarea>
+</div>
 <!-- 
 666|92511631403174000|92511631403174102|2009-01-01 21:27:34.767|2009-01-01 21:27:34.767|3|14|14|0|15403592657|1886369806|179;BOOST SHORT CODES|54985||92511631403174|2009-01-01 21:27:37.680|1|179;BOOST SHORT CODES|179|1|N/A|N/A|N/A|N/A|BOOST MOBILE|NO|GREETING MENU|179000_179|2|TIMEOUT|T|3||||666_92511631403174102_14||666_92511631403174000_14
  -->
 
-<button id="compare">Generate table</button>
-
+<div align="center">
+	<button id="compare">Generate table</button>
+</div>
+<hr>
+<div align="center">
 <h4>Generated table for edit</h4> 
 <div id="msgid">
 </div>
@@ -323,10 +330,13 @@ Schema
        </div>
     </div>
 <button id="names">Generate input data</button>
+</div>
+<div align="center">
 <h4>Generated data</h4>
 <textarea cols='200' rows='5' id="generatedData" wrap='off'>
 
 </textarea>
+</div>
 
 <script  type="text/javascript">
 function schemaIsSelected() {
