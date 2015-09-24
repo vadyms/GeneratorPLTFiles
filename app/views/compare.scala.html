@@ -29,6 +29,7 @@ $(document).ready(function(){
 		var $xml = $(xmlDoc);
 		// Find Person Tag
 		var $member = $xml.find("member");
+		var num=1;
 
 		var table = document.createElement('table');
 	    var tr = document.createElement('tr');					
@@ -38,12 +39,13 @@ $(document).ready(function(){
 			var isNullable = $(this).attr('nullable');
             var td = document.createElement('th');
             if (isNullable=="false") {
-            	var text = document.createTextNode(name+' !');
+            	var text = document.createTextNode(num+'! '+name);
             } else {
-            	var text = document.createTextNode(name);    
+            	var text = document.createTextNode(num+' '+name);    
             }
             td.appendChild(text);
             tr.appendChild(td);
+            num++;
 		});
 		table.appendChild(tr);
 
