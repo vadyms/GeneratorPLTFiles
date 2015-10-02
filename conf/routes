@@ -24,13 +24,13 @@ GET     /compare/compareData				controllers.Compare.compareData()
 POST    /compare/compareData				controllers.Compare.compareData()
 GET     /compare/xmlRawSchema				controllers.Compare.xmlRawSchema(rawschema,server)
 
-
-
 GET     /generator							controllers.Generator.index()
 GET     /generator/xmlRawSchema				controllers.Generator.xmlRawSchema(rawschema,server)
 GET     /generator/lsschemas				controllers.Generator.lsSchemas()
 GET     /generator/test						controllers.Generator.test()
 
 GET     /makeimport							controllers.MakeImport.index()
+
+GET     /navigator							controllers.Navigator.index()
 
 #GET     /hotels/list        Hotels.list

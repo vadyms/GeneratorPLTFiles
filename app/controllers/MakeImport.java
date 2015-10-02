@@ -86,13 +86,24 @@ public class MakeImport extends Controller  {
  	   	//get current date time with Calendar()
  	   	Calendar cal = Calendar.getInstance();
  	   	String sDateTime = dateFormat.format(date);
+ 	   	visitors.clear();
+    	try {
+	    	BufferedReader reader = new BufferedReader(new FileReader(sVisitorList));
+	    	String line;
+	    	while ((line = reader.readLine()) != null) {
+	    		visitors.add(line);
+	    	}
+	    	reader.close();
+    	} catch (IOException e) {
+			e.printStackTrace();
+		}
  	   	
-		visitors.add(sDateTime+ " - "+remote+"\n");
+		visitors.add(sDateTime+ " - "+remote);
 		
     	try {
 			FileWriter writer = new FileWriter(sVisitorList); 
 			for(String str: visitors) {
-			  writer.write(str);
+			  writer.write(str+"\n");
 			}
 			writer.close();
     	} catch (IOException e) {

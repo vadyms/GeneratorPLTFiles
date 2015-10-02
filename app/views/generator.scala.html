@@ -1,10 +1,11 @@
 @(generator: List[String], XML: List[String])
+
 <html>
 <head>
-
 <title>
 </title>
 <script src="@routes.Assets.versioned("javascripts/jQuery.js")" type="text/javascript"></script>
+
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
@@ -13,10 +14,26 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
 </head>
 <body>
-@main("PLT generator") {
+@menu("PLT generator") {
 }
+
+<script  type="text/javascript">
+$(document).ready(function(){
+	//alert("Hello");
+	var SchemaObject;
+
+	// создаём объект с нулевым прототипом
+	SchemaObject = Object.create(null);
+	//var person = new Object();
+	SchemaObject["name"]="Name1";
+	alert(SchemaObject.name);
+});
+</script>
+
 <p>Generator</p>
 <p>
 Choose server IP:
@@ -67,6 +84,7 @@ function serverIsSelected() {
 
 }
 </script>
+
 
 </body>
 </html>
