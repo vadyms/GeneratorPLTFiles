@@ -29,9 +29,6 @@ public class MakeImport extends Controller  {
 	private String sStatFile="stat.log";
 	private String sPage="MakeImport";
 	
-	private List<String> visitors = new ArrayList<String>();
-	private String sVisitorList="VisitLog.log";
-	
 	private void statistic(String page, int count) {
     	DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
  	   	//get current date time with Date()
@@ -79,45 +76,9 @@ public class MakeImport extends Controller  {
 
 	}
 	
-	private void visitors(String remote) {
-    	DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
- 	   	//get current date time with Date()
- 	   	Date date = new Date();
- 	   	//get current date time with Calendar()
- 	   	Calendar cal = Calendar.getInstance();
- 	   	String sDateTime = dateFormat.format(date);
- 	   	visitors.clear();
-    	try {
-	    	BufferedReader reader = new BufferedReader(new FileReader(sVisitorList));
-	    	String line;
-	    	while ((line = reader.readLine()) != null) {
-	    		visitors.add(line);
-	    	}
-	    	reader.close();
-    	} catch (IOException e) {
-			e.printStackTrace();
-		}
- 	   	
-		visitors.add(sDateTime+ " - "+remote);
-		
-    	try {
-			FileWriter writer = new FileWriter(sVisitorList); 
-			for(String str: visitors) {
-			  writer.write(str+"\n");
-			}
-			writer.close();
-    	} catch (IOException e) {
-			e.printStackTrace();
-		}	
-    	
-    	// Log some debug info
-    	//Logger.info("A log message");
-	}
-	
     public Result index() {
     	// save statistic
     	Logger.info("MakeImport - "+request().remoteAddress());
-    	//visitors(request().remoteAddress());
     	String path = request().path();
     	count++;
     	statistic(sPage,count);
