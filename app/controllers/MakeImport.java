@@ -78,7 +78,7 @@ public class MakeImport extends Controller  {
 	
     public Result index() {
     	// save statistic
-    	Logger.info("MakeImport - "+request().remoteAddress());
+    	Logger.info(sPage+" - "+request().remoteAddress());
     	String path = request().path();
     	count++;
     	statistic(sPage,count);
