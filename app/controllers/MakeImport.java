@@ -31,7 +31,7 @@ public class MakeImport extends Controller  {
 	
 	private List<String> visitors = new ArrayList<String>();
 	private String sVisitorList="VisitLog.log";
-
+	
 	private void statistic(String page, int count) {
     	DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
  	   	//get current date time with Date()
@@ -108,12 +108,16 @@ public class MakeImport extends Controller  {
 			writer.close();
     	} catch (IOException e) {
 			e.printStackTrace();
-		}		
+		}	
+    	
+    	// Log some debug info
+    	//Logger.info("A log message");
 	}
 	
     public Result index() {
     	// save statistic
-    	visitors(request().remoteAddress());
+    	Logger.info(request().remoteAddress());
+    	//visitors(request().remoteAddress());
     	String path = request().path();
     	count++;
     	statistic(sPage,count);
