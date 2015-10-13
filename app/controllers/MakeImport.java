@@ -29,6 +29,7 @@ public class MakeImport extends Controller  {
 	private String sStatFile="stat.log";
 	private String sPage="MakeImport";
 	
+	// method to make statistic per day for visit sites
 	private void statistic(String page, int count) {
     	DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
  	   	//get current date time with Date()
