@@ -73,7 +73,6 @@ public class MakeImport extends Controller  {
     	} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 	}
 	
     public Result index() {
@@ -109,7 +108,6 @@ public class MakeImport extends Controller  {
             return badRequest("Expceting some data");
         } else {
             String response1 = "Client " + form.get("foo") + "has phone number " + form.get("telefone_cliente");
-
             //return ok(response1,response2,response3);
             return ok(response1);
         }
