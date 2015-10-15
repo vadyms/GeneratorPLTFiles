@@ -36,7 +36,6 @@ public class MakeImport extends Controller  {
  	   	Date date = new Date();
  	   	//get current date time with Calendar()
  	   	Calendar cal = Calendar.getInstance();
- 	   	
     	if (sDate.equals(dateFormat.format(date))) {
     	} else {
     		sDate = dateFormat.format(date);
@@ -82,7 +81,6 @@ public class MakeImport extends Controller  {
     	String path = request().path();
     	count++;
     	statistic(sPage,count);
-    	
     	RawSchema rs=new RawSchema();
         return ok(views.html.makeimport.render(rs.GetAllSchemasList(), rs.GetXML(),rs.GetAllSchemasList(),rs.GetAllSchemasList()));
     }
@@ -131,8 +129,6 @@ public class MakeImport extends Controller  {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-        //return ok(f+"!"+schemaName+"-"+server+"!");
-    	//return ok(f.toString());
     	return ok(s);
     }
 }
